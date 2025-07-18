@@ -10,3 +10,6 @@ class Estoque:
         self.produtos[id]=Produto(id,nome,preco,quantidade)
         return True
     
+    def listar_produtos(self):
+        return list(self.produtos.values())
+    
