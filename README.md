@@ -4,47 +4,60 @@ repositorio para treino em python
 
 Crud utilizando arquitetura MVC
 
-Recursos 
-+----------------+
-|   Produto      |    <<Model>>
-+----------------+
-| - id: str      |
-| - nome: str    |
-| - preco: float |
++-------------------+
+|     Produto       |    <<Model>>
++-------------------+
+| - id: str         |
+| - nome: str       |
+| - preco: float    |
 | - quantidade: int |
-+----------------+
-| + __init__()   |
-| + __str__()    |
-+----------------+
++-------------------+
+| + __init__()      |
+| + __str__()       |
++-------------------+
 
-+----------------+
-|   EstoqueModel |   <<Model>>
-+----------------+
-| - produtos: dict|
-+----------------+
-| + adicionar()  |
-| + listar()     |
-| + atualizar()  |
-| + remover()    |
-| + ajustar_estoque() |
-+----------------+
+        ^
+        |
+        | contém
+        |
 
-+----------------+
-|   EstoqueView  |   <<View>>
-+----------------+
-| + menu()       |
-| + mostrar_produto() |
-| + mostrar_lista() |
-| + mostrar_mensagem() |
-+----------------+
++-------------------+
+|    Estoque        |    <<Model>>
++-------------------+
+| - produtos: dict  |
++-------------------+
+| + adicionar_produto()   |
+| + listar_produtos()     |
+| + atualizar_produto()   |
+| + remover_produto()     |
+| + ajustar_estoque()     |
++-------------------+
 
-+----------------+
-| EstoqueController | <<Controller>>
-+----------------+
-| - model: EstoqueModel |
-| - view: EstoqueView |
-+----------------+
-| + iniciar()    |
-| + processar_opcao() |
-+----------------+
+        ^
+        |
+        | usa
+        |
 
++------------------------+
+| EstoqueController      |    <<Controller>>
++------------------------+
+| - model: Estoque       |
+| - view: EstoqueView    |
++------------------------+
+| + iniciar()            |
+| + processar_opcao()    |
++------------------------+
+
+        ^
+        |
+        | exibe
+        |
+
++-------------------+
+|  EstoqueView      |    <<View>>
++-------------------+
+| + menu()          |
+| + mostrar_produto()|
+| + mostrar_lista()  |
+| + mostrar_mensagem()|
++-------------------+
