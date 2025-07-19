@@ -36,64 +36,59 @@ UML com PlantUML
 
 pytest (testes futuros)
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+🗃️ 6. Diagrama UML (PlantUML)
+Segue o código PlantUML para visualização no PlantUML Online Editor:
 
-Crud utilizando arquitetura MVC
+markdown
+Copiar
+Editar
+@startuml
 
-+-------------------+
-|     Produto       |    <<Model>>
-+-------------------+
-| - id: str         |
-| - nome: str       |
-| - preco: float    |
-| - quantidade: int |
-+-------------------+
-| + __init__()      |
-| + __str__()       |
-+-------------------+
+class Produto {
+  - id: str
+  - nome: str
+  - preco: float
+  - quantidade: int
+  + __init__()
+  + __str__()
+}
 
-        ^
-        |
-        | contém
-        |
+class EstoqueModel {
+  - produtos: dict
+  + adicionar()
+  + listar()
+  + atualizar()
+  + remover()
+  + ajustar_estoque()
+}
 
-+-------------------+
-|    Estoque        |    <<Model>>
-+-------------------+
-| - produtos: dict  |
-+-------------------+
-| + adicionar_produto()   |
-| + listar_produtos()     |
-| + atualizar_produto()   |
-| + remover_produto()     |
-| + ajustar_estoque()     |
-+-------------------+
+class EstoqueView {
+  + menu()
+  + mostrar_produto()
+  + mostrar_lista()
+  + mostrar_mensagem()
+}
 
-        ^
-        |
-        | usa
-        |
+class EstoqueController {
+  - model: EstoqueModel
+  - view: EstoqueView
+  + iniciar()
+}
 
-+------------------------+
-| EstoqueController      |    <<Controller>>
-+------------------------+
-| - model: Estoque       |
-| - view: EstoqueView    |
-+------------------------+
-| + iniciar()            |
-| + processar_opcao()    |
-+------------------------+
+EstoqueController --> EstoqueModel
+EstoqueController --> EstoqueView
+EstoqueModel --> Produto
 
-        ^
-        |
-        | exibe
-        |
+@enduml
 
-+-------------------+
-|  EstoqueView      |    <<View>>
-+-------------------+
-| + menu()          |
-| + mostrar_produto()|
-| + mostrar_lista()  |
-| + mostrar_mensagem()|
-+-------------------+
+📝 7. Requisitos de instalação
+bash
+Copiar
+Editar
+git clone https://github.com/seuusuario/nomeprojeto.git
+cd nomeprojeto
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+pip install -r requirements.txt
+python main.py
