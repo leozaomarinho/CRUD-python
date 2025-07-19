@@ -1,4 +1,5 @@
 class EstoqueView:
+    #responsável por exibir as informações do estoque
     def menu(self):
         print("Menu de Estoque:")
         print("1. Adicionar Produto")

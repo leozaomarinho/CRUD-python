@@ -1,4 +1,5 @@
 class Produto:
+    #entidade que representa um produto
     def __init__(self,id,nome,preco,quantidade):
         self.id = id
         self.nome = nome
