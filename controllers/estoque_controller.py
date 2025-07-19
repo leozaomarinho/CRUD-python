@@ -6,3 +6,6 @@ class EstoqueController:
     def __init__(self):
         self.model = EstoqueModel()
         self.view = EstoqueView()
+
+    def iniciar(self):
+        while
