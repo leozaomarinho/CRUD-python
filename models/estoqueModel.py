@@ -22,6 +22,12 @@ class Estoque:
             return True
         return False
     
+    def remover_produto(self, id):
+        if id in self.produtos:
+            del self.produtos[id]
+            return True
+        return False
+    
     def ajustar_estoque(self,id,quantidade):
         if id in self.produtos:
             self.produtos[id].quantidade += quantidade
