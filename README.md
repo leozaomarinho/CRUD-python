@@ -28,21 +28,9 @@ Controller	Processa ações do usuário e conecta Model e View (EstoqueControlle
 💻 5. Tecnologias Utilizadas
 Python 3.10+
 
-SQLAlchemy (próxima etapa)
-
-FastAPI (próxima etapa)
-
 UML com PlantUML
 
-pytest (testes futuros)
-
 🗃️ 6. Diagrama UML (PlantUML)
-Segue o código PlantUML para visualização no PlantUML Online Editor:
-
-markdown
-Copiar
-Editar
-@startuml
 
 class Produto {
   - id: str
@@ -79,21 +67,9 @@ EstoqueController --> EstoqueModel
 EstoqueController --> EstoqueView
 EstoqueModel --> Produto
 
-@enduml
 
 📝 7. Requisitos de instalação
 bash
-Copiar
-Editar
 git clone https://github.com/seuusuario/nomeprojeto.git
-cd nomeprojeto
-
-python -m venv venv
-
-source venv/bin/activate  # Linux/Mac
-
-venv\Scripts\activate     # Windows
-
-pip install -r requirements.txt
 
 python main.py
