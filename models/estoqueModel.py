@@ -1,4 +1,4 @@
-from produtoModel import Produto
+from models.produtoModel import Produto
 
 class EstoqueModel:
     #responsável por gerenciar o estoque de produtos

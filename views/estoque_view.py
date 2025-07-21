@@ -8,7 +8,6 @@ class EstoqueView:
         print("4. Remover Produto")
         print("5. Ajustar Estoque")
         print("6. Sair")
-        return input("Escolha uma opção: ")
     
     def mostrar_produtos(self, produto):
         print(produto)

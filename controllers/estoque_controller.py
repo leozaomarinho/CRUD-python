@@ -1,5 +1,5 @@
 from models.estoqueModel import EstoqueModel
-from models.produtoModel import ProdutoModel
+from models.produtoModel import Produto
 from views.estoque_view import EstoqueView
 
 class EstoqueController:
@@ -12,6 +12,7 @@ class EstoqueController:
             self.view.menu()
             opcao = input("Escolha uma opção: ")
             if opcao == '1':
+                print('-----------------------------')
                 id = input("ID do produto: ")
                 nome = input("Nome do produto: ")
                 preco = float(input("Preço do produto: "))
@@ -25,10 +26,12 @@ class EstoqueController:
                     self.view.mostrar_mensagem(str(e))
 
             elif opcao == '2':
+                print('-----------------------------')
                 produtos = self.model.listar_produtos()
                 self.view.mostrar_lista_produtos(produtos)
 
             elif opcao == '3':
+                print('-----------------------------')
                 id = input('ID do produto a ser atualizado: ')
                 nome = input("Novo nome do produto (deixe em branco para não alterar): ")
                 preco = input("Novo preço do produto (deixe em branco para não alterar): ")
@@ -46,6 +49,7 @@ class EstoqueController:
                     self.view.mostrar_mensagem(str(e))
 
             elif opcao == '4':
+                print('-----------------------------')
                 id = input("ID do produto a ser removido: ")
                 if self.model.remover_produto(id):
                     self.view.mostrar_mensagem("Produto removido com sucesso.")
@@ -53,6 +57,7 @@ class EstoqueController:
                     self.view.mostrar_mensagem("Erro ao remover produto, verifique se o produto existe.")
 
             elif opcao == '5':
+                print('-----------------------------')
                 id = input("ID do produto para ajustar estoque: ")
                 quantidade = int(input("Quantidade a ajustar (use negativo para remover): "))
                 if self.model.ajustar_estoque(id, quantidade):
@@ -61,6 +66,7 @@ class EstoqueController:
                     self.view.mostrar_mensagem("Erro ao ajustar estoque, verifique se o produto existe.") 
             
             elif opcao == '6':
+                print('-----------------------------')
                 self.view.mostrar_mensagem("Saindo do sistema.")
                 break
             else:

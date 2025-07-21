@@ -7,4 +7,4 @@ class Produto:
         self.quantidade = quantidade
 
     def __str__(self):
-        return f'Prduto(id={self.id}, nome="{self.nome}", preco={self.preco}, quantidade={self.quantidade})'
+        return f'Produto(id={self.id}, nome="{self.nome}", preco={self.preco}, quantidade={self.quantidade})'
