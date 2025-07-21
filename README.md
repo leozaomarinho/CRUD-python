@@ -87,8 +87,13 @@ Copiar
 Editar
 git clone https://github.com/seuusuario/nomeprojeto.git
 cd nomeprojeto
+
 python -m venv venv
+
 source venv/bin/activate  # Linux/Mac
+
 venv\Scripts\activate     # Windows
+
 pip install -r requirements.txt
+
 python main.py
