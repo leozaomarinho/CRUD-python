@@ -44,3 +44,24 @@ class EstoqueController:
                         self.view.mostrar_mensagem("Erro ao atualizar produto, verifique se o produto existe.")
                 except ValueError as e:
                     self.view.mostrar_mensagem(str(e))
+
+            elif opcao == '4':
+                id = input("ID do produto a ser removido: ")
+                if self.model.remover_produto(id):
+                    self.view.mostrar_mensagem("Produto removido com sucesso.")
+                else:
+                    self.view.mostrar_mensagem("Erro ao remover produto, verifique se o produto existe.")
+
+            elif opcao == '5':
+                id = input("ID do produto para ajustar estoque: ")
+                quantidade = int(input("Quantidade a ajustar (use negativo para remover): "))
+                if self.model.ajustar_estoque(id, quantidade):
+                    self.view.mostrar_mensagem("Estoque ajustado com sucesso.")
+                else:
+                    self.view.mostrar_mensagem("Erro ao ajustar estoque, verifique se o produto existe.") 
+            
+            elif opcao == '6':
+                self.view.mostrar_mensagem("Saindo do sistema.")
+                break
+            else:
+                self.view.mostrar_mensagem("Opção inválida, tente novamente.")

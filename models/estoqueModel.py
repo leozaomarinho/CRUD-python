@@ -1,6 +1,6 @@
 from produtoModel import Produto
 
-class Estoque:
+class EstoqueModel:
     #responsável por gerenciar o estoque de produtos
     def __init__(self):
         self.produtos = {}
